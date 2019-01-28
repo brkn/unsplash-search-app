@@ -23,7 +23,7 @@ class App extends Component {
           <div className="User-input">
             <TextForm/>
             <Dropdown header="Collections" items={this.state.collections} />
-            <input type="submit" value="Search" />
+            <input type="submit" className="SearchButton" value="Search" />
           </div>
         </div>
         <div className="Content">"content will be here"</div>
