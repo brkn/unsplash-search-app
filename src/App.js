@@ -1,25 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import Dropdown from "./componenets/Dropdown";
+import TextForm from "./componenets/TextForm";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    collections: ["Wallpapers", "Nature", "Animals", "Fashion", "People"]
+  };
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="Header">
+          <div className="Logo-wrapper">
+            <div className="Logo-rectangle">
+              <img src={logo} className="Logo" alt="logo" />
+            </div>
+            <h1>
+              <b>image</b> search
+            </h1>
+          </div>
+          <div className="User-input">
+            <TextForm/>
+            <Dropdown header="Collections" items={this.state.collections} />
+            <input type="submit" value="Search" />
+          </div>
+        </div>
+        <div className="Content">"content will be here"</div>
       </div>
     );
   }
