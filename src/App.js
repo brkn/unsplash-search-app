@@ -20,7 +20,7 @@ class App extends Component {
               <b>image</b> search
             </h1>
           </div>
-          <div className="User-input">
+          <div className="UserInput">
             <TextForm/>
             <Dropdown header="Collections" items={this.state.collections} />
             <input type="submit" className="SearchButton" value="Search" />
