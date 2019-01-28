@@ -12,9 +12,9 @@ class Dropdown extends React.Component {
     this.toggleDropdown = this.toggleDropdown.bind(this);
   }   
   toggleDropdown() {
-    this.setState({
-      open: !this.state.open
-    });
+    this.setState( (prevState) => ({
+      open: !prevState.open
+    }));
   }
 
   selectItem(item) {
@@ -43,11 +43,11 @@ class Dropdown extends React.Component {
       <div className="dropdown">
         <div className="dd-header" onClick={() => this.toggleDropdown()}>
           <div className="dd-header-title">
-            {this.header}
-            {this.open ? "^":"v"}
+            {this.state.header}
+            {this.state.open ? "^":"v"}
           </div>
         </div>  
-        { this.open &&
+        { this.state.open &&
             <ul>{this.renderItems()}</ul>
         }
       </div>
