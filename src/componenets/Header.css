@@ -1,0 +1,86 @@
+.Index-header {
+  background-color: #050417;
+  color: #ffffff;
+  margin: auto;
+}
+
+.Index-header .Logo-wrapper {
+  width: 213px;
+  height: 120px;
+  margin: auto auto;
+}
+
+.Index-header .Logo-rectangle {
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(
+    333.23deg,
+    #2a2b8d -16.84%,
+    #2b2f8f -12.31%,
+    #559bd1 119.72%
+  );
+  background-size: cover;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.Index-header .Logo {
+  display: block;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+
+.Index-header .Logo-wrapper > h1 {
+  font-family: OpenSans;
+  font-size: 36px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.Index-header .Content {
+  display: none;
+}
+.Index-header input {
+  width: 400px;
+  height: 50px;
+  border-radius: 4px;
+}
+.Index-header .dropdown {
+  width: 400px;
+  height: 50px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.Index-header li {
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+  margin: 2px 20px;
+  color: #050417;
+  background-color: #ffffff;
+  list-style: none;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+}
+
+.Index-header .SearchButton {
+  position: absolute;
+}
+
+.Index-header .UserInput {
+  color: #050417;
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.Index-header .dd-header-title {
+  margin: 2px 20px;
+}
+
+.Content-header {
+    height: 120px;
+}
