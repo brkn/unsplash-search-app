@@ -9,9 +9,9 @@ import TextForm from "./TextForm";
 class Header extends Component {
 	state = {};
   render() {
-		console.log(this);
+    const { headerClassName } = this.props;    
     return (
-      <div className={this.props.headerClassName}>
+      <div className={headerClassName}>
         <div className="Logo-wrapper">
           <div className="Logo-rectangle">
             <img src={logo} className="Logo" alt="logo" />

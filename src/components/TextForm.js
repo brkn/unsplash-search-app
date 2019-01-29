@@ -16,12 +16,13 @@ class TextForm extends React.Component {
   };
 
   render() {
+    const {value} = this.state.value
     return (
       <form onSubmit={this.handleSubmit}>
         <label className="Text-input">
           <input
             type="text"
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
           />
         </label>

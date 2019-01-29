@@ -21,11 +21,11 @@ class Dropdown extends React.Component {
     });
 
   renderItems() {
-    if (!this.props.items) {
+    if (!this.state.items) {
       return;
     }
 
-    return this.props.items.map(item => {
+    return this.state.items.map(item => {
       return (
         <li onClick={() => this.selectItem(item)} className="List-item">
           {item}
@@ -33,18 +33,19 @@ class Dropdown extends React.Component {
       );
     });
   }
-
+  
   render() {
+    const { header, open} = this.state;
     return (
       <div className="Dropdown">
         <div className="Dd-header" onClick={() => this.toggleDropdown()}>
           <div className="Dd-header-title">
-            {this.state.header}
-            {this.state.open ? "^" : "v"}
+            {header}
+            {open ? "^" : "v"}
           </div>
         </div>
-        {this.state.open && <ul>{this.renderItems()}</ul>}
-      </div>
+        {open && <ul>{this.renderItems()}</ul>}
+      </div>  
     );
   }
 }
