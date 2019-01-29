@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import logo from "../logo.svg";
 import "./Header.css";
+import collections from "../constants.js"
+
 import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";
 
 class Header extends Component {
 	state = {
-    collections: ["Wallpapers", "Nature", "Animals", "Fashion", "People"]
+    collections: collections
   };
   render() {
 		console.log(this);
