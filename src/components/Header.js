@@ -7,9 +7,7 @@ import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";
 
 class Header extends Component {
-	state = {
-    collections: collections
-  };
+	state = {};
   render() {
 		console.log(this);
     return (
@@ -22,11 +20,11 @@ class Header extends Component {
             <b>image</b> search
           </h1>
         </div>
-        <div className="User-input">
+        <form className="User-input">
           <TextForm />
-          <Dropdown header="Collections" items={this.state.collections} />
-          <input type="submit" className="Search-button" value="Search" />
-        </div>
+          <Dropdown header="Collections" items={collections} />
+          <button type="submit" className="Search-button" value="Search" />
+        </form>
       </div>
     );
   }
