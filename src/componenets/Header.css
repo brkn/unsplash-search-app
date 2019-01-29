@@ -48,7 +48,7 @@
   height: 50px;
   border-radius: 4px;
 }
-.Index-header .dropdown {
+.Index-header .Dropdown {
   width: 400px;
   height: 50px;
   margin-top: 2vh;
@@ -67,17 +67,17 @@
   text-overflow: ellipsis;
 }
 
-.Index-header .SearchButton {
+.Index-header .Search-button {
   position: absolute;
 }
 
-.Index-header .UserInput {
+.Index-header .Text-input {
   color: #050417;
   background-color: #ffffff;
   cursor: default;
 }
 
-.Index-header .dd-header-title {
+.Index-header .Dd-header-title {
   margin: 2px 20px;
 }
 

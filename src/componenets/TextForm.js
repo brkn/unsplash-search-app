@@ -22,7 +22,7 @@ class TextForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label className="TextInput">
+        <label className="Text-input">
           <input
             type="text"
             value={this.state.value}

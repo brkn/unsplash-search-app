@@ -22,10 +22,10 @@ class Header extends Component {
             <b>image</b> search
           </h1>
         </div>
-        <div className="UserInput">
+        <div className="User-input">
           <TextForm />
           <Dropdown header="Collections" items={this.state.collections} />
-          <input type="submit" className="SearchButton" value="Search" />
+          <input type="submit" className="Search-button" value="Search" />
         </div>
       </div>
     );

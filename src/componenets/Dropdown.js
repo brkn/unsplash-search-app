@@ -31,7 +31,7 @@ class Dropdown extends React.Component {
 
     return this.props.items.map(item => {
       return (
-        <li onClick={() => this.selectItem(item)} className="list-item">
+        <li onClick={() => this.selectItem(item)} className="List-item">
           {item}
         </li>
       );
@@ -40,9 +40,9 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <div className="dropdown">
-        <div className="dd-header" onClick={() => this.toggleDropdown()}>
-          <div className="dd-header-title">
+      <div className="Dropdown">
+        <div className="Dd-header" onClick={() => this.toggleDropdown()}>
+          <div className="Dd-header-title">
             {this.state.header}
             {this.state.open ? "^":"v"}
           </div>
