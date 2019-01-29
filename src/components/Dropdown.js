@@ -8,21 +8,17 @@ class Dropdown extends React.Component {
         items: this.props.items,
         header: this.props.header
     };
-    this.selectItem = this.selectItem.bind(this);
-    this.toggleDropdown = this.toggleDropdown.bind(this);
   }   
-  toggleDropdown() {
+  toggleDropdown = () =>
     this.setState( (prevState) => ({
       open: !prevState.open
     }));
-  }
 
-  selectItem(item) {
+  selectItem = (item) =>
     this.setState({
       header: item,
       open: false
     });
-  }
 
   renderItems() {
     if (!this.props.items) {
