@@ -1,33 +1,34 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Dropdown from "./componenets/Dropdown";
-import TextForm from "./componenets/TextForm";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
+import Content from "./componenets/Content";
+import Header from "./componenets/Header";
 
 class App extends Component {
-  state = {
-    collections: ["Wallpapers", "Nature", "Animals", "Fashion", "People"]
-  };
+  state = {};
   render() {
     return (
-      <div className="App">
-        <div className="Header">
-          <div className="Logo-wrapper">
-            <div className="Logo-rectangle">
-              <img src={logo} className="Logo" alt="logo" />
-            </div>
-            <h1>
-              <b>image</b> search
-            </h1>
-          </div>
-          <div className="UserInput">
-            <TextForm/>
-            <Dropdown header="Collections" items={this.state.collections} />
-            <input type="submit" className="SearchButton" value="Search" />
-          </div>
+      <Router>
+        <div className="App">
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Header {...props} headerClassName={"Index-header"} />
+            )}
+          />
+          <Route
+            exact
+            path="/search/:collection/:querry"
+            components={{
+              Header: props => (
+                <Header {...props} headerClassName={"Content-header"} />
+              ),
+              Content: Content
+            }}
+          />
         </div>
-        <div className="Content">"content will be here"</div>
-      </div>
+      </Router>
     );
   }
 }
