@@ -40,9 +40,6 @@
   font-weight: normal;
 }
 
-.Index-header .Content {
-  display: none;
-}
 .Index-header input {
   width: 400px;
   height: 50px;
@@ -51,8 +48,7 @@
 .Index-header .Dropdown {
   width: 400px;
   height: 50px;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin: 20px, 2px;
 }
 
 .Index-header li {
@@ -82,5 +78,5 @@
 }
 
 .Content-header {
-    height: 120px;
+  height: 120px;
 }
