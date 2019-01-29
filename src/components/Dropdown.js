@@ -4,17 +4,17 @@ class Dropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        open: false,
-        items: this.props.items,
-        header: this.props.header
+      open: false,
+      items: this.props.items,
+      header: this.props.header
     };
-  }   
+  }
   toggleDropdown = () =>
-    this.setState( (prevState) => ({
+    this.setState(prevState => ({
       open: !prevState.open
     }));
 
-  selectItem = (item) =>
+  selectItem = item =>
     this.setState({
       header: item,
       open: false
@@ -40,12 +40,10 @@ class Dropdown extends React.Component {
         <div className="Dd-header" onClick={() => this.toggleDropdown()}>
           <div className="Dd-header-title">
             {this.state.header}
-            {this.state.open ? "^":"v"}
+            {this.state.open ? "^" : "v"}
           </div>
-        </div>  
-        { this.state.open &&
-            <ul>{this.renderItems()}</ul>
-        }
+        </div>
+        {this.state.open && <ul>{this.renderItems()}</ul>}
       </div>
     );
   }

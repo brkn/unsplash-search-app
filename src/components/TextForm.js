@@ -8,9 +8,9 @@ class TextForm extends React.Component {
     };
   }
 
-  handleChange = (event) => this.setState({ value: event.target.value });
+  handleChange = event => this.setState({ value: event.target.value });
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     alert("A name was submitted: " + this.state.value);
     event.preventDefault();
   };
