@@ -43,7 +43,7 @@ class Dropdown extends React.Component {
         <div className="Dd-header">{header}</div>
         <img
           src={triangle}
-          className={"triangle " + open ? "triangle-up" : "triangle-down"}
+          className={"triangle " + (open ? "triangle-up" : "triangle-down")}
           alt="triangle"
         />
         {open && <ul>{this.renderItems()}</ul>}
