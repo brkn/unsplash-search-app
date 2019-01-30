@@ -30,7 +30,7 @@ class App extends Component {
       })
       .then(response => {
         this.setState({
-          content: response.data
+          content: response.data.results
         });
       })
       .catch(error => {
