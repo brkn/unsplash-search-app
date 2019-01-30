@@ -37,9 +37,9 @@ class Dropdown extends React.Component {
       );
     });
   }
-  
+
   render() {
-    const { header, open} = this.state;
+    const { header, open } = this.state;
     return (
       <div className="Dropdown">
         <div className="Dd-header" onClick={() => this.toggleDropdown()}>
@@ -49,7 +49,7 @@ class Dropdown extends React.Component {
           </div>
         </div>
         {open && <ul>{this.renderItems()}</ul>}
-      </div>  
+      </div>
     );
   }
 }
