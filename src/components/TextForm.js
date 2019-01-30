@@ -16,7 +16,7 @@ class TextForm extends React.Component {
   };
 
   render() {
-    const {value} = this.state.value
+    const {value} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <label className="Text-input">
