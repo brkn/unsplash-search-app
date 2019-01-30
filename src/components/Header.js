@@ -13,7 +13,15 @@ class Header extends Component {
     super(props);
     this.state = {};
   }
-  
+
+  getPhotos = event => {
+    event.preventDefault();
+    this.props.searchPhotos();
+    this.setState({
+      content: this.props.content
+    });
+    console.log(this.props);
+  };
 
   setQuery = q => {
     this.props.setQuery(q);
@@ -25,7 +33,7 @@ class Header extends Component {
 
   render() {
     const { headerClassName } = this.props;
-
+    
     return (
       <div className={headerClassName}>
         <div className="Logo-wrapper">
