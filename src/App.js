@@ -48,10 +48,8 @@ class App extends Component {
             )}
           />
           <Route
-            path="/search/:collection/:querry"
-            render={props => (
-              <ContentLayout {...props}/>
-            )}
+            path="/search/:collection/:query"
+            render={props => <ContentLayout {...props} />}
           />
         </div>
       </Router>
