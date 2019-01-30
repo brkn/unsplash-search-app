@@ -25,9 +25,13 @@ class Dropdown extends React.Component {
       return;
     }
 
-    return this.state.items.map(item => {
+    return this.state.items.map((item, key) => {
       return (
-        <li onClick={() => this.selectItem(item)} className="List-item">
+        <li
+          key={key}
+          onClick={() => this.selectItem(item)}
+          className="List-item"
+        >
           {item}
         </li>
       );
