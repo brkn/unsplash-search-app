@@ -20,7 +20,7 @@
 
 .Index-header {
   background-color: #050417;
-  color: #ffffff;
+  color: #D5D7E5;
   margin: auto;
 }
 
@@ -64,11 +64,14 @@
   width: 400px;
   height: 50px;
   border-radius: 4px;
+  margin-top: 50px;
 }
 .Index-header .Dropdown {
   width: 400px;
   height: 50px;
-  margin: 20px, 2px;
+  margin: 20px 2px;
+  background-color: #ffffff;
+  border-radius: 4px;
 }
 
 .Index-header li {
@@ -94,7 +97,7 @@
 }
 
 .Index-header .Dd-header-title {
-  margin: 2px 20px;
+  margin: 15px 0 15px 20px;
 }
 
 .Content-header {
