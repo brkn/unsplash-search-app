@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import logo from "../logo.svg";
 import "./Header.css";
-import collections from "../constants.js"
+import collections from "../constants.js";
 
 import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";
 
 class Header extends Component {
-	state = {};
+  state = {};
+  
   render() {
-    const { headerClassName } = this.props;    
+    const { headerClassName } = this.props;
+
     return (
       <div className={headerClassName}>
         <div className="Logo-wrapper">
