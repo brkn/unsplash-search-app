@@ -3,15 +3,16 @@ import React, { Component } from "react";
 class Content extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      collection: this.props.collection,
+      querry: this.props.querry
+    };
   }
 
   componentDidMount() {
-    document.body.style.backgroundColor = "#45b141";
   }
 
   render() {
-    console.log(this.props.match.params);
     return <div className="Content">
       "content will be here"
       </div>;
