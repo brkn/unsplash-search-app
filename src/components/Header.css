@@ -12,8 +12,9 @@
 
 .Index-header {
   background-color: #050417;
-  color: #D5D7E5;
+  color: #d5d7e5;
   margin: auto;
+  font-size: 14px;
 }
 
 .Index-header .Logo-wrapper {
@@ -50,6 +51,7 @@
   font-size: 36px;
   text-align: center;
   font-weight: normal;
+  margin-top: 14px;
 }
 
 .Index-header input {
@@ -57,11 +59,12 @@
   height: 50px;
   border-radius: 4px;
   margin-top: 50px;
+  color: #d5d7e5;
 }
 .Index-header .Dropdown {
   width: 400px;
   height: 50px;
-  margin: 20px 2px;
+  margin: 20px 0;
   background-color: #ffffff;
   border-radius: 4px;
 }
