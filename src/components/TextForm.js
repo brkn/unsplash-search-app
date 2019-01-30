@@ -12,7 +12,14 @@ class TextForm extends React.Component {
 
   render() {
     const { value } = this.state;
-    return <input type="text" value={value} onChange={this.handleChange} />;
+    return (
+      <input
+        type="text"
+        value={value}
+        onChange={this.handleChange}
+        placeholder="Query"
+      />
+    );
   }
 }
 
