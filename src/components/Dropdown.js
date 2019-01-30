@@ -1,5 +1,5 @@
 import React from "react";
-
+import triangle from "./triangle.svg";
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +45,11 @@ class Dropdown extends React.Component {
         <div className="Dd-header" onClick={() => this.toggleDropdown()}>
           <div className="Dd-header-title">
             {header}
-            {open ? "^" : "v"}
+            <img
+              src={triangle}
+              className={open ? "triangle--up" : "triangle--down"}
+              alt="triangle"
+            />
           </div>
         </div>
         {open && <ul>{this.renderItems()}</ul>}

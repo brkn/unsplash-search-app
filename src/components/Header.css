@@ -1,3 +1,23 @@
+.triangle--down {
+  width: 14px;
+  height: 9px;
+  background: #fff;
+  border-radius: 1px;
+
+  float: right;
+  margin: 20px;
+}
+.triangle--up {
+  width: 14px;
+  height: 9px;
+  background: #ffffff;
+  border-radius: 1px;
+
+  float: right;
+  margin: 20px;  
+  transform: rotate(-180deg);
+}
+
 .Index-header {
   background-color: #050417;
   color: #ffffff;
