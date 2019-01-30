@@ -20,6 +20,7 @@ class Dropdown extends React.Component {
       open: false
     });
     this.toggleDropdown();
+    this.props.setCollection(item);
   };
 
   renderItems() {
