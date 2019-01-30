@@ -57,6 +57,7 @@ class App extends Component {
   };
 
   render() {
+    const { params } = this.state;
     return (
       <Router>
         <div className="App">
@@ -70,6 +71,7 @@ class App extends Component {
                 searchPhotos={this.searchPhotos}
                 setQuery={this.setQuery}
                 setCollection={this.setCollection}
+                params={params}
               />
             )}
           />
