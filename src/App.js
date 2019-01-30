@@ -76,8 +76,17 @@ class App extends Component {
             )}
           />
           <Route
-            path="/search/:collection/:query"
-            render={props => <ContentLayout {...props} />}
+            path="/search"
+            render={props => (
+              <ContentLayout
+                {...props}
+                headerClassName={"Content-header"}
+                searchPhotos={this.searchPhotos}
+                setQuery={this.setQuery}
+                setCollection={this.setCollection}
+                params={params}
+              />
+            )}
           />
         </div>
       </Router>
