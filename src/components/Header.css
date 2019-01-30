@@ -1,20 +1,12 @@
-.triangle--down {
+.triangle{
   width: 14px;
   height: 9px;
-  background: #fff;
   border-radius: 1px;
 
   float: right;
   margin: 20px;
 }
-.triangle--up {
-  width: 14px;
-  height: 9px;
-  background: #ffffff;
-  border-radius: 1px;
-
-  float: right;
-  margin: 20px;  
+.triangle-up {
   transform: rotate(-180deg);
 }
 
