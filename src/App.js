@@ -17,13 +17,14 @@ class App extends Component {
   };
 
   searchPhotos = () => {
+    const {query, collection} = this.state.params;
     axios
       .get("https://site.com/", {
         params: {
           client_id:
             "bdafd9c0457f994a91c042f1445ff058ee00fbbe745f642d5037ba1dd170c157",
-          query: this.state.params.query,
-          collection: this.state.params.collection
+          query: query,
+          collection: collection
         }
       })
       .then(response => {
