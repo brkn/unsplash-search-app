@@ -49,8 +49,6 @@ class App extends Component {
               <Header
                 {...props}
                 headerClassName={"Index-header"}
-                collection={this.state.params.collection}
-                query={this.state.params.query}
                 searchPhotos={this.searchPhotos}
               />
             )}
