@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   searchPhotos = () => {
-    const {query, collection} = this.state.params;
+    const { query, collection } = this.state.params;
     axios
       .get(baseUrl, {
         params: {
@@ -38,6 +38,24 @@ class App extends Component {
       });
   };
 
+  setQuery = q => {
+    this.setState(prevState => ({
+      params: {
+        collection: prevState.params.collection,
+        query: q
+      }
+    }));
+  };
+
+  setCollection = c => {
+    this.setState(prevState => ({
+      params: {
+        collection: c,
+        query: prevState.params.query
+      }
+    }));
+  };
+
   render() {
     return (
       <Router>
@@ -50,6 +68,8 @@ class App extends Component {
                 {...props}
                 headerClassName={"Index-header"}
                 searchPhotos={this.searchPhotos}
+                setQuery={this.setQuery}
+                setCollection={this.setCollection}
               />
             )}
           />
