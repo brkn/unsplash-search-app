@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Content from "./components/Content";
+import ContentLayout from "./components/ContentLayout";
 import Header from "./components/Header";
 
 class App extends Component {
@@ -18,14 +18,10 @@ class App extends Component {
             )}
           />
           <Route
-            exact
             path="/search/:collection/:querry"
-            components={{
-              Header: props => (
-                <Header {...props} headerClassName={"Content-header"} />
-              ),
-              Content: Content
-            }}
+            render={props => (
+              <ContentLayout {...props}/>
+            )}
           />
         </div>
       </Router>
