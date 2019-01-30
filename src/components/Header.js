@@ -14,13 +14,9 @@ class Header extends Component {
     this.state = {};
   }
 
-  getPhotos = event => {
+  searchPhotos = event => {
     event.preventDefault();
     this.props.searchPhotos();
-    this.setState({
-      content: this.props.content
-    });
-    console.log(this.props);
   };
 
   setQuery = q => {
@@ -44,7 +40,7 @@ class Header extends Component {
             <b>image</b> search
           </h1>
         </div>
-        <form className="User-input" onSubmit={this.getPhotos}>
+        <form className="User-input" onSubmit={this.searchPhotos}>
           <TextForm setQuery={this.setQuery} />
           <Dropdown
             header="Collections"
