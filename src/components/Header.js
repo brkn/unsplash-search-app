@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import logo from "../logo.svg";
 import "./Header.css";
+
 import collections from "../constants.js";
 
 import Dropdown from "./Dropdown";
@@ -12,6 +14,15 @@ class Header extends Component {
     this.state = {};
   }
   
+
+  setQuery = q => {
+    this.props.setQuery(q);
+  };
+
+  setCollection = q => {
+    this.props.setCollection(q);
+  };
+
   render() {
     const { headerClassName } = this.props;
 
