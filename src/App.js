@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
+import { baseUrl } from "./constants";
 
 import ContentLayout from "./components/ContentLayout";
 import Header from "./components/Header";
@@ -19,7 +20,7 @@ class App extends Component {
   searchPhotos = () => {
     const {query, collection} = this.state.params;
     axios
-      .get("https://site.com/", {
+      .get(baseUrl, {
         params: {
           client_id:
             "bdafd9c0457f994a91c042f1445ff058ee00fbbe745f642d5037ba1dd170c157",
