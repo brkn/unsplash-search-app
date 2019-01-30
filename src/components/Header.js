@@ -7,7 +7,10 @@ import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";
 
 class Header extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   
   render() {
     const { headerClassName } = this.props;
