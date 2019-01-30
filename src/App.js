@@ -10,7 +10,7 @@ import Header from "./components/Header";
 class App extends Component {
   state = {
     params: {
-      collections: "",
+      collection: "",
       query: ""
     },
     content: {}
@@ -23,7 +23,7 @@ class App extends Component {
           client_id:
             "bdafd9c0457f994a91c042f1445ff058ee00fbbe745f642d5037ba1dd170c157",
           query: this.state.params.query,
-          collections: this.state.params.collections
+          collection: this.state.params.collection
         }
       })
       .then(response => {

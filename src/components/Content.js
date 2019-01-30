@@ -5,7 +5,7 @@ class Content extends Component {
     super(props);
     this.state = {
       collection: this.props.collection,
-      querry: this.props.querry
+      query: this.props.query
     };
   }
 
