@@ -8,8 +8,10 @@ class TextForm extends React.Component {
     };
   }
 
-  handleChange = event => this.setState({ value: event.target.value });
-
+  handleChange = event => {
+    this.setState({ value: event.target.value });
+    this.props.setQuery(event.target.value);
+  };
   render() {
     const { value } = this.state;
     return (
