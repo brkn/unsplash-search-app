@@ -14,22 +14,20 @@ class Dropdown extends React.Component {
       open: !prevState.open
     }));
 
-  selectItem = item =>
+  selectItem = item => event => {
     this.setState({
       header: item,
       open: false
     });
+    this.toggleDropdown();
+  };
 
   renderItems() {
-    if (!this.state.items) {
-      return;
-    }
-
     return this.state.items.map((item, key) => {
       return (
         <li
           key={key}
-          onClick={() => this.selectItem(item)}
+          onClick={this.selectItem(item)}
           className="List-item"
         >
           {item}
@@ -41,17 +39,13 @@ class Dropdown extends React.Component {
   render() {
     const { header, open } = this.state;
     return (
-      <div className="Dropdown">
-        <div className="Dd-header" onClick={() => this.toggleDropdown()}>
-          <div className="Dd-header-title">
-            {header}
-            <img
-              src={triangle}
-              className={open ? "triangle--up" : "triangle--down"}
-              alt="triangle"
-            />
-          </div>
-        </div>
+      <div className="Dropdown" onClick={this.toggleDropdown}>
+        <div className="Dd-header">{header}</div>
+        <img
+          src={triangle}
+          className={"triangle " + open ? "triangle-up" : "triangle-down"}
+          alt="triangle"
+        />
         {open && <ul>{this.renderItems()}</ul>}
       </div>
     );
