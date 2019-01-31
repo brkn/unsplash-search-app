@@ -14,7 +14,7 @@ class App extends Component {
       collection: "",
       query: ""
     },
-    content: {}
+    content: []
   };
 
   searchPhotos = () => {
