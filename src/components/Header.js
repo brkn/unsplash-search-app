@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+//import { Redirect } from "react-router-dom";
+import queryString from "query-string"
 
 import logo from "../logo.svg";
 import "./Header.css";
@@ -15,8 +17,15 @@ class Header extends Component {
   }
 
   searchPhotos = event => {
+    const { params } = this.props;
+    const searchString = queryString.stringify(params);
+
     event.preventDefault();
     this.props.searchPhotos();
+    this.props.history.push({
+      pathname: "/search",
+      search: searchString
+    });
   };
 
   setQuery = q => {
@@ -29,8 +38,6 @@ class Header extends Component {
 
   render() {
     const { headerClassName } = this.props;
-    const { query, collection } = this.props.params;
-    
     return (
       <div className={headerClassName}>
         <div className="Logo-wrapper">

@@ -3,13 +3,37 @@ import Content from "./Content";
 import Header from "./Header";
 
 class ContentLayout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  searchPhotos = () => {
+    this.props.searchPhotos();
+  };
+
+  setQuery = q => {
+    this.props.setQuery(q);
+  };
+
+  setCollection = q => {
+    this.props.setCollection(q);
+  };
+
   render() {
-    console.log(this.props.match.params);
-    const {collection, query} = this.props.match.params;
+    const { params } = this.props;
     return (
       <React.Fragment>
-        <Header headerClassName={"Content-header"} />
-        <Content collection={collection} query= {query}/>
+        <Header
+          {...this.props}
+          headerClassName={"Content-header"}
+          searchPhotos={this.searchPhotos}
+          setQuery={this.setQuery}
+          setCollection={this.setCollection}
+          params={params}
+        />
+        <Content />
       </React.Fragment>
     );
   }
