@@ -12,10 +12,23 @@ class Content extends Component {
   componentDidMount() {
   }
 
+  renderCells = () => {
+    const { content } = this.props;
+
+    return content.map(item => {
+      return (
+        <div key={item.id} className="Grid-cell">
+          <img
+            src={item.urls.small}
+            className="Grid-cell-image"
+            alt={item.description}
+          />
+        </div>
+      );
+    });
+  };
   render() {
-    return <div className="Content">
-      "content will be here"
-      </div>;
+    return <div className="Content grid">{this.renderCells()}</div>;
   }
 }
 
