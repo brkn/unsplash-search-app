@@ -6,13 +6,28 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collection: this.props.collection,
-      query: this.props.query
+      content: this.props.content
     };
   }
 
-  componentDidMount() {
-  }
+  /* componentDidMount() {
+    let grid = document.getElementsByClassName("grid")[0];
+    let rowHeight = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    );
+    let rowGap = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    );
+    let items = document.getElementsByClassName("Grid-cell");
+    for (let item in items) {
+      let rowSpan = Math.ceil(
+        (item.querySelector(".content").getBoundingClientRect().height +
+          rowGap) /
+          (rowHeight + rowGap)
+      );
+      item.style.gridRowEnd = "span " + rowSpan;
+    }
+  } */
 
   renderCells = () => {
     const { content } = this.props;
