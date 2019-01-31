@@ -5,8 +5,7 @@ import Header from "./Header";
 class ContentLayout extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
   searchPhotos = () => {
@@ -22,7 +21,7 @@ class ContentLayout extends Component {
   };
 
   render() {
-    const { params } = this.props;
+    const { params, content } = this.props;
     return (
       <React.Fragment>
         <Header
@@ -33,7 +32,7 @@ class ContentLayout extends Component {
           setCollection={this.setCollection}
           params={params}
         />
-        <Content />
+        <Content content={content} />
       </React.Fragment>
     );
   }
