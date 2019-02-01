@@ -9,13 +9,14 @@ import ContentLayout from "./components/ContentLayout";
 import Header from "./components/Header";
 
 class App extends Component {
-  state = {
-    params: {
-      query: ""
-    },
-    content: []
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      params: {
+      },
+      content: []
+    };
+  }
   searchPhotos = () => {
     const { query, collection } = this.state.params;
     axios
