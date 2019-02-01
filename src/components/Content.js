@@ -6,28 +6,50 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      events: ["load", "resize"]
     };
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.content !== this.props.content) {
-      const grid = document.getElementsByClassName("Grid")[0];
-      const rowHeight = parseInt(
-        window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+  resizeItems = () => {
+    console.log("resized");
+    const grid = document.getElementsByClassName("Grid")[0];
+    const rowHeight = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    );
+    const rowGap = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    );
+    const items = document.getElementsByClassName("Grid-cell");
+    const images = document.getElementsByClassName("Grid-cell-image");
+    for (var i = 0; i < items.length; i++) {
+      const cellHeight = parseInt(
+        window.getComputedStyle(images[i]).getPropertyValue("height")
       );
-      const rowGap = parseInt(
-        window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
-      );
-      const items = document.getElementsByClassName("Grid-cell");
-      const images = document.getElementsByClassName("Grid-cell-image");
-      for (var i = 0; i < items.length; i++) {
-        const cellHeight = parseInt(
-          window.getComputedStyle(images[i]).getPropertyValue("height")
-        );
-        let rowSpan = Math.ceil((cellHeight + rowGap) / (rowHeight + rowGap));
-        items[i].style.gridRowEnd = "span " + rowSpan;
-      }
+      let rowSpan = Math.ceil((cellHeight + rowGap) / (rowHeight + rowGap));
+      items[i].style.gridRowEnd = "span " + rowSpan;
     }
+  };
+  componentWillUpdate = () => {
+    console.log("will upd")
+    this.resizeItems();
+  }
+  componentDidUpdate= () => {
+    console.log("did upd")
+    this.resizeItems();
+  }
+  componentDidMount = () =>{
+    console.log("did mount")
+    this.state.events.forEach(event => {
+      window.addEventListener(event, this.resizeItems);
+    });
+  }
+    
+
+  componentWillUnmount = () =>{
+    console.log("will mount")
+    this.state.events.forEach(event => {
+      window.addEventListener(event, this.resizeItems);
+    });
   }
 
   renderCells = () => {
