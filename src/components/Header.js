@@ -55,7 +55,7 @@ class Header extends Component {
             items={collections}
             setCollection={this.setCollection}
           />
-          <button className="Search-button" type="submit" value="Search" />
+          <button className="Search-button" type="submit">SEARCH</button>
         </form>
       </div>
     );
