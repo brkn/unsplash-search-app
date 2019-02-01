@@ -9,12 +9,27 @@
 .triangle-up {
   transform: rotate(-180deg);
 }
-
+.Search-button {
+  background: #2A2B8D;
+  border-radius: 25px;
+  width: 246px;
+  height: 50px;
+  border-width: 0;
+  color: #ffffff;
+  font-family: Open Sans;
+  line-height: normal;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
 .Index-header {
   background-color: #050417;
   color: #d5d7e5;
   margin: auto;
   font-size: 14px;
+}
+
+.Index-header .User-input {
+  text-align:center;
 }
 
 .Index-header .Logo-wrapper {
@@ -80,10 +95,6 @@
   list-style: none;
   padding: 5px 10px;
   text-overflow: ellipsis;
-}
-
-.Index-header .Search-button {
-  position: absolute;
 }
 
 .Index-header .Text-input {
