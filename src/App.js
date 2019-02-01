@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
-import { baseUrl } from "./constants";
+import { BASEURL, CLIENT_ID } from "./constants";
 
 import ContentLayout from "./components/ContentLayout";
 import Header from "./components/Header";
@@ -12,18 +12,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      params: {
-      },
+      params: {},
       content: []
     };
   }
   searchPhotos = () => {
     const { query, collection } = this.state.params;
     axios
-      .get(baseUrl, {
+      .get(BASEURL, {
         params: {
-          client_id:
-            "bdafd9c0457f994a91c042f1445ff058ee00fbbe745f642d5037ba1dd170c157",
+          client_id: CLIENT_ID,
           query: query,
           collection: collection
         }

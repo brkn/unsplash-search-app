@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-//import { Redirect } from "react-router-dom";
-import queryString from "query-string"
+import queryString from "query-string";
 
 import logo from "../logo.svg";
 import "./Header.css";
 
-import collections from "../constants.js";
+import { COLLECTIONS } from "../constants.js";
 
 import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";
@@ -52,10 +51,12 @@ class Header extends Component {
           <TextForm setQuery={this.setQuery} />
           <Dropdown
             header="Collections"
-            items={collections}
+            items={COLLECTIONS}
             setCollection={this.setCollection}
           />
-          <button className="Search-button" type="submit">SEARCH</button>
+          <button className="Search-button" type="submit">
+            SEARCH
+          </button>
         </form>
       </div>
     );
