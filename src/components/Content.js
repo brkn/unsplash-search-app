@@ -6,28 +6,29 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: this.props.content
     };
   }
 
-  /* componentDidMount() {
-    let grid = document.getElementsByClassName("grid")[0];
-    let rowHeight = parseInt(
-      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
-    );
-    let rowGap = parseInt(
-      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
-    );
-    let items = document.getElementsByClassName("Grid-cell");
-    for (let item in items) {
-      let rowSpan = Math.ceil(
-        (item.querySelector(".content").getBoundingClientRect().height +
-          rowGap) /
-          (rowHeight + rowGap)
+  componentDidUpdate(prevProps) {
+    if (prevProps.content !== this.props.content) {
+      const grid = document.getElementsByClassName("Grid")[0];
+      const rowHeight = parseInt(
+        window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
       );
-      item.style.gridRowEnd = "span " + rowSpan;
+      const rowGap = parseInt(
+        window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+      );
+      const items = document.getElementsByClassName("Grid-cell");
+      const images = document.getElementsByClassName("Grid-cell-image");
+      for (var i = 0; i < items.length; i++) {
+        const cellHeight = parseInt(
+          window.getComputedStyle(images[i]).getPropertyValue("height")
+        );
+        let rowSpan = Math.ceil((cellHeight + rowGap) / (rowHeight + rowGap));
+        items[i].style.gridRowEnd = "span " + rowSpan;
+      }
     }
-  } */
+  }
 
   renderCells = () => {
     const { content } = this.props;
@@ -45,7 +46,7 @@ class Content extends Component {
     });
   };
   render() {
-    return <div className="Content grid">{this.renderCells()}</div>;
+    return <div className="Content Grid">{this.renderCells()}</div>;
   }
 }
 
