@@ -28,7 +28,7 @@
   font-size: 14px;
 }
 
-.Index-header .User-input {
+.User-input {
   text-align: center;
 }
 
@@ -72,23 +72,36 @@
   margin-top: 14px;
 }
 
-.Index-header input {
+input {
   width: 400px;
   height: 50px;
   border-radius: 4px;
+  border-width: 0;
+  border-style: unset;
   margin-top: 50px;
-  color: #050417;
+  color: #d5d7e5;
   outline: none;
+  cursor: default;
+  font-size: 14px;
+  padding-left: 20px;
 }
-.Index-header .Dropdown {
+
+.Content-header input {
+  margin-top: 0;
+  float: left;
+}
+
+.Dropdown {
   width: 400px;
   height: 50px;
   margin: 20px 0;
   background-color: #ffffff;
   border-radius: 4px;
 }
-
-.Index-header li {
+.Content-header .Dropdown {
+  margin: 0 0 0 30px;
+}
+li {
   width: 100%;
   height: 50px;
   display: inline-block;
@@ -100,13 +113,13 @@
   text-overflow: ellipsis;
 }
 
-.Index-header .Text-input {
+.Text-input {
   color: #050417;
   background-color: #ffffff;
   cursor: default;
 }
 
-.Index-header .Dd-header {
+.Dd-header {
   margin: 15px 0 15px 20px;
   float: left;
   cursor: default;
@@ -120,11 +133,19 @@
   color: #d5d7e5;
   font-size: 14px;
 }
-
+.Content-header .User-input {
+  display: flex;
+  width: 84%;
+  margin: 35px 0 30px;
+}
 .Content-header .Search-button {
   float: right;
+  margin-left: 52px;
 }
-
+.Content-header .Logo-wrapper {
+  float: left;
+  margin: 25px 3.47% 
+}
 .Content-header .Logo-wrapper > h1 {
   display: none;
 }
