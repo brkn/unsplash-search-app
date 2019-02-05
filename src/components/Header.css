@@ -40,6 +40,9 @@
 
 .Index-header .Logo-rectangle {
   margin: auto;
+}
+
+.Logo-rectangle {
   width: 70px;
   height: 70px;
   background: linear-gradient(
@@ -54,14 +57,14 @@
   display: flex;
 }
 
-.Index-header .Logo {
+.Logo {
   display: block;
   margin: auto;
   width: 40px;
   height: 40px;
 }
 
-.Index-header .Logo-wrapper > h1 {
+.Logo-wrapper > h1 {
   font-family: OpenSans;
   font-size: 36px;
   text-align: center;
@@ -110,5 +113,18 @@
 }
 
 .Content-header {
-  height: 120px;
+  display: block;
+  width: 100vw;
+  height: 120px; 
+  background-color: #050417;
+  color: #d5d7e5;
+  font-size: 14px;
+}
+
+.Content-header .Search-button {
+  float: right;
+}
+
+.Content-header .Logo-wrapper > h1 {
+  display: none;
 }
