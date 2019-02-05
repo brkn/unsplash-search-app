@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
 import Content from "./Content";
 import Header from "./Header";
+
+import "./ContentLayout.css";
 
 class ContentLayout extends Component {
   constructor(props) {
@@ -23,7 +26,7 @@ class ContentLayout extends Component {
   render() {
     const { params, content } = this.props;
     return (
-      <React.Fragment>
+      <div className="Content-layout">
         <Header
           {...this.props}
           headerClassName={"Content-header"}
@@ -33,7 +36,7 @@ class ContentLayout extends Component {
           params={params}
         />
         <Content content={content} />
-      </React.Fragment>
+      </div>
     );
   }
 }

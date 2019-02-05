@@ -1,0 +1,6 @@
+.Content-layout {
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: 120px 1fr;
+    background-color: #ffffff;
+}
