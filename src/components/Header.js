@@ -29,6 +29,7 @@ class Header extends Component {
 
   render() {
     const { headerClassName, setQuery, setCollection, params } = this.props;
+    const headerValue = params.collection ?  params.collection : "Collections";
     return (
       <div className={headerClassName}>
         <div className="Logo-wrapper">
@@ -42,7 +43,7 @@ class Header extends Component {
         <form className="User-input" onSubmit={this.searchPhotos}>
           <TextForm setQuery={setQuery} query={params.query} />
           <Dropdown
-            header="Collections"
+            header={headerValue}
             items={COLLECTIONS}
             setCollection={setCollection}
           />
