@@ -10,29 +10,23 @@ class ContentLayout extends Component {
     super(props);
     this.state = {};
   }
-
-  searchPhotos = () => {
-    this.props.searchPhotos();
-  };
-
-  setQuery = q => {
-    this.props.setQuery(q);
-  };
-
-  setCollection = q => {
-    this.props.setCollection(q);
-  };
-
+  
   render() {
-    const { params, content } = this.props;
+    const {
+      params,
+      content,
+      searchPhotos,
+      setQuery,
+      setCollection
+    } = this.props;
     return (
       <div className="Content-layout">
         <Header
           {...this.props}
           headerClassName={"Content-header"}
-          searchPhotos={this.searchPhotos}
-          setQuery={this.setQuery}
-          setCollection={this.setCollection}
+          searchPhotos={searchPhotos}
+          setQuery={setQuery}
+          setCollection={setCollection}
           params={params}
         />
         <Content content={content} />

@@ -11,7 +11,6 @@ class Content extends Component {
   }
 
   resizeItems = () => {
-    console.log("resized");
     const grid = document.getElementsByClassName("Grid")[0];
     const rowHeight = parseInt(
       window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
@@ -30,12 +29,11 @@ class Content extends Component {
     }
   };
   componentDidMount = () =>{
-    console.log("did mount")
     this.state.events.forEach(event => {
       window.addEventListener(event, this.resizeItems);
     });
   }
-  
+
   renderCells = () => {
     const { content } = this.props;
 
