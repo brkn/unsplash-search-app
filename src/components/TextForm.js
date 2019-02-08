@@ -12,8 +12,9 @@ class TextForm extends React.Component {
     this.setState({ value: event.target.value });
     this.props.setQuery(event.target.value);
   };
+
   render() {
-    const { value } = this.state;
+    const value = this.props.query ? this.props.query : "";
     return (
       <input
         type="text"
