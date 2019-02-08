@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
-import { BASEURL, CLIENT_ID } from "./constants";
+import { BASEURL, CLIENT_ID, COLLECTION_IDS, GET_RANDOM } from "./constants";
 
 import ContentLayout from "./components/ContentLayout/ContentLayout";
 import Header from "./components/Header/Header";
@@ -23,7 +23,7 @@ class App extends Component {
         params: {
           client_id: CLIENT_ID,
           query: query,
-          collections: collections
+          collections: GET_RANDOM(COLLECTION_IDS[collections])
         }
       })
       .then(response => {
