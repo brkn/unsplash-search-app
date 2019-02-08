@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import queryString from "query-string";
 
-import logo from "../logo.svg";
+import logo from "../../logo.svg";
 import "./Header.css";
 
-import { COLLECTIONS } from "../constants.js";
+import { COLLECTIONS } from "../../constants.js";
 
 import Dropdown from "./Dropdown";
 import TextForm from "./TextForm";

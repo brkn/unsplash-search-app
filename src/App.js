@@ -5,8 +5,8 @@ import axios from "axios";
 import "./App.css";
 import { BASEURL, CLIENT_ID } from "./constants";
 
-import ContentLayout from "./components/ContentLayout";
-import Header from "./components/Header";
+import ContentLayout from "./components/ContentLayout/ContentLayout";
+import Header from "./components/Header/Header";
 
 class App extends Component {
   constructor(props) {
