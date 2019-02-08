@@ -17,13 +17,13 @@ class App extends Component {
     };
   }
   searchPhotos = () => {
-    const { query, collection } = this.state.params;
+    const { query, collections } = this.state.params;
     axios
       .get(BASEURL, {
         params: {
           client_id: CLIENT_ID,
           query: query,
-          collection: collection
+          collections: collections
         }
       })
       .then(response => {
@@ -39,7 +39,7 @@ class App extends Component {
   setQuery = q => {
     this.setState(prevState => ({
       params: {
-        collection: prevState.params.collection,
+        collections: prevState.params.collections,
         query: q
       }
     }));
@@ -48,7 +48,7 @@ class App extends Component {
   setCollection = c => {
     this.setState(prevState => ({
       params: {
-        collection: c,
+        collections: c,
         query: prevState.params.query
       }
     }));
