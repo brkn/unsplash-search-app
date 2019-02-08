@@ -6,7 +6,7 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: ["load", "resize"]
+      events: ["onload", "resize"]
     };
   }
 
@@ -35,7 +35,7 @@ class Content extends Component {
       window.addEventListener(event, this.resizeItems);
     });
   }
-    
+  
   renderCells = () => {
     const { content } = this.props;
 
