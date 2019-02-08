@@ -29,14 +29,6 @@ class Content extends Component {
       items[i].style.gridRowEnd = "span " + rowSpan;
     }
   };
-  componentWillUpdate = () => {
-    console.log("will upd")
-    this.resizeItems();
-  }
-  componentDidUpdate= () => {
-    console.log("did upd")
-    this.resizeItems();
-  }
   componentDidMount = () =>{
     console.log("did mount")
     this.state.events.forEach(event => {
@@ -44,14 +36,6 @@ class Content extends Component {
     });
   }
     
-
-  componentWillUnmount = () =>{
-    console.log("will mount")
-    this.state.events.forEach(event => {
-      window.addEventListener(event, this.resizeItems);
-    });
-  }
-
   renderCells = () => {
     const { content } = this.props;
 
@@ -62,6 +46,7 @@ class Content extends Component {
             src={item.urls.small}
             className="Grid-cell-image"
             alt={item.description}
+            onLoad={this.resizeItems}
           />
         </div>
       );
