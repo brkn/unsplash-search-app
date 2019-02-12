@@ -45,10 +45,10 @@ class App extends Component {
     }));
   };
 
-  setCollection = c => {
+  setCollection = collection => {
     this.setState(prevState => ({
       params: {
-        collections: c,
+        collections: collection,
         query: prevState.params.query
       }
     }));
