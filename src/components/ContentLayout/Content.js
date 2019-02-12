@@ -9,7 +9,7 @@ class Content extends Component {
   }
 
   resizeItems = () => {
-    const grid = document.getElementsByClassName("Grid")[0];
+    const grid = document.querySelector(".Grid");
     const rowHeight = parseInt(
       window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
     );
