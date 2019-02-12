@@ -5,9 +5,7 @@ import "./Content.css";
 class Content extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      events: ["onload", "resize"]
-    };
+    this.state = {};
   }
 
   resizeItems = () => {
@@ -28,11 +26,10 @@ class Content extends Component {
       items[i].style.gridRowEnd = "span " + rowSpan;
     }
   };
-  componentDidMount = () =>{
-    this.state.events.forEach(event => {
-      window.addEventListener(event, this.resizeItems);
-    });
-  }
+  componentDidMount = () => window.addEventListener("resize", this.resizeItems);
+
+  componentWillUnmount = () =>
+    window.removeEventListener("resize", this.resizeItems);
 
   renderCells = () => {
     const { content } = this.props;
