@@ -6,7 +6,7 @@ import "./Header.css";
 
 import { COLLECTIONS } from "../../constants.js";
 
-import Dropdown from "./Dropdown";
+import Dropdown from "./Dropdown/Dropdown";
 import TextForm from "./TextForm";
 
 class Header extends Component {
