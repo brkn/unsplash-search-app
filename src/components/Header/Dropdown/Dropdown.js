@@ -32,7 +32,7 @@ class Dropdown extends React.Component {
         <li
           key={key}
           onClick={this.selectItem(item)}
-          className="List-item"
+          className="list-item"
         >
           {item}
         </li>
@@ -48,8 +48,8 @@ class Dropdown extends React.Component {
       "triangle-down": !open}
     )
     return (
-      <div className="Dropdown" onClick={this.toggleDropdown}>
-        <div className="Dd-header">{header}</div>
+      <div className="dropdown" onClick={this.toggleDropdown}>
+        <div className="dd-header">{header}</div>
         <img
           src={triangle}
           className={triangleClass}

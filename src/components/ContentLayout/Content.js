@@ -9,15 +9,15 @@ class Content extends Component {
   }
 
   resizeItems = () => {
-    const grid = document.querySelector(".Grid");
+    const grid = document.querySelector(".grid");
     const rowHeight = parseInt(
       window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
     );
     const rowGap = parseInt(
       window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
     );
-    const items = document.getElementsByClassName("Grid-cell");
-    const images = document.getElementsByClassName("Grid-cell-image");
+    const items = document.getElementsByClassName("grid-cell");
+    const images = document.getElementsByClassName("grid-cell-image");
     for (var i = 0; i < items.length; i++) {
       const cellHeight = parseInt(
         window.getComputedStyle(images[i]).getPropertyValue("height")
@@ -36,10 +36,10 @@ class Content extends Component {
 
     return content.map(item => {
       return (
-        <div key={item.id} className="Grid-cell">
+        <div key={item.id} className="grid-cell">
           <img
             src={item.urls.small}
-            className="Grid-cell-image"
+            className="grid-cell-image"
             alt={item.description}
             onLoad={this.resizeItems}
           />
@@ -48,7 +48,7 @@ class Content extends Component {
     });
   };
   render() {
-    return <div className="Content Grid">{this.renderCells()}</div>;
+    return <div className="content grid">{this.renderCells()}</div>;
   }
 }
 

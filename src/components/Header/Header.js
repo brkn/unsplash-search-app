@@ -31,22 +31,22 @@ class Header extends Component {
     const headerValue = params.collections || "Collections";
     return (
       <div className={headerClassName}>
-        <div className="Logo-wrapper">
-          <div className="Logo-rectangle">
-            <img src={logo} className="Logo" alt="logo" />
+        <div className="logo-wrapper">
+          <div className="logo-rectangle">
+            <img src={logo} className="logo" alt="logo" />
           </div>
           <h1>
             <b>image</b> search
           </h1>
         </div>
-        <form className="User-input" onSubmit={this.searchPhotos}>
+        <form className="user-input" onSubmit={this.searchPhotos}>
           <TextForm setQuery={setQuery} query={params.query} />
           <Dropdown
             header={headerValue}
             items={COLLECTIONS}
             setCollection={setCollection}
           />
-          <button className="Search-button" type="submit">
+          <button className="search-button" type="submit">
             SEARCH
           </button>
         </form>

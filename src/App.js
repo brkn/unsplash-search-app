@@ -58,14 +58,14 @@ class App extends Component {
     const { params, content } = this.state;
     return (
       <Router>
-        <div className="App">
+        <div className="app">
           <Route
             exact
             path="/"
             render={props => (
               <Header
                 {...props}
-                headerClassName={"Index-header"}
+                headerClassName={"index-header"}
                 searchPhotos={this.searchPhotos}
                 setQuery={this.setQuery}
                 setCollection={this.setCollection}
@@ -78,7 +78,7 @@ class App extends Component {
             render={props => (
               <ContentLayout
                 {...props}
-                headerClassName={"Content-header"}
+                headerClassName={"content-header"}
                 searchPhotos={this.searchPhotos}
                 setQuery={this.setQuery}
                 setCollection={this.setCollection}

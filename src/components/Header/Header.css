@@ -9,7 +9,7 @@
 .triangle-up {
   transform: rotate(-180deg);
 }
-.Search-button {
+.search-button {
   background: #2a2b8d;
   border-radius: 25px;
   width: 246px;
@@ -21,28 +21,28 @@
   font-size: 14px;
   letter-spacing: 0.1em;
 }
-.Index-header {
+.index-header {
   background-color: #050417;
   color: #d5d7e5;
   margin: auto;
   font-size: 14px;
 }
 
-.User-input {
+.user-input {
   text-align: center;
 }
 
-.Index-header .Logo-wrapper {
+.index-header .logo-wrapper {
   width: 213px;
   height: 120px;
   margin: auto;
 }
 
-.Index-header .Logo-rectangle {
+.index-header .logo-rectangle {
   margin: auto;
 }
 
-.Logo-rectangle {
+.logo-rectangle {
   width: 70px;
   height: 70px;
   background: linear-gradient(
@@ -57,14 +57,14 @@
   display: flex;
 }
 
-.Logo {
+.logo {
   display: block;
   margin: auto;
   width: 40px;
   height: 40px;
 }
 
-.Logo-wrapper > h1 {
+.logo-wrapper > h1 {
   font-family: OpenSans;
   font-size: 36px;
   text-align: center;
@@ -84,12 +84,12 @@ input {
   padding-left: 20px;
 }
 
-.Content-header input {
+.content-header input {
   margin-top: 0;
   float: left;
 }
 
-.Dropdown {
+.dropdown {
   width: 400px;
   height: 50px;
   margin: 20px 0;
@@ -97,9 +97,11 @@ input {
   border-radius: 4px;
   cursor: pointer;
 }
-.Content-header .Dropdown {
+
+.content-header .dropdown {
   margin: 0 0 0 30px;
 }
+
 li {
   width: 380px;
   height: 35px;
@@ -118,19 +120,19 @@ ul {
   text-align: left;
 }
 
-.Text-input {
+.text-input {
   color: #050417;
   background-color: #ffffff;
   cursor: default;
 }
 
-.Dd-header {
+.dd-header {
   margin: 15px 0 15px 20px;
   float: left;
   cursor: default;
 }
 
-.Content-header {
+.content-header {
   display: block;
   width: 100vw;
   height: 120px; 
@@ -138,19 +140,23 @@ ul {
   color: #d5d7e5;
   font-size: 14px;
 }
-.Content-header .User-input {
+
+.content-header .user-input {
   display: flex;
   width: 84%;
   margin: 35px 0 30px;
 }
-.Content-header .Search-button {
+
+.content-header .search-button {
   float: right;
   margin-left: 52px;
 }
-.Content-header .Logo-wrapper {
+
+.content-header .logo-wrapper {
   float: left;
   margin: 25px 3.47% 
 }
-.Content-header .Logo-wrapper > h1 {
+
+.content-header .logo-wrapper > h1 {
   display: none;
 }

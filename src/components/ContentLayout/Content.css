@@ -1,4 +1,4 @@
-.Grid {
+.grid {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -6,12 +6,12 @@
   margin: 50px 200px 0;
 }
 
-.Content {
+.content {
   max-width: 100%;
   background-color: #ffffff;
   min-height: 100vh;
 }
 
-.Grid-cell-image{
+.grid-cell-image{
   max-width: 100%;
 }

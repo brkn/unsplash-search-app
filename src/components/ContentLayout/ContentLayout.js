@@ -20,10 +20,10 @@ class ContentLayout extends Component {
       setCollection
     } = this.props;
     return (
-      <div className="Content-layout">
+      <div className="content-layout">
         <Header
           {...this.props}
-          headerClassName={"Content-header"}
+          headerClassName={"content-header"}
           searchPhotos={searchPhotos}
           setQuery={setQuery}
           setCollection={setCollection}
