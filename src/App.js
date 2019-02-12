@@ -36,11 +36,11 @@ class App extends Component {
       });
   };
 
-  setQuery = q => {
+  setQuery = query => {
     this.setState(prevState => ({
       params: {
         collections: prevState.params.collections,
-        query: q
+        query: query
       }
     }));
   };
