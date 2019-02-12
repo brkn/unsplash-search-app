@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
+import DropdownItem from "./DropdownItem";
+
 import triangle from "./triangle.svg";
 
 class Dropdown extends React.Component {
@@ -12,6 +14,7 @@ class Dropdown extends React.Component {
       header: this.props.header
     };
   }
+
   toggleDropdown = () =>
     this.setState(prevState => ({
       open: !prevState.open
@@ -26,36 +29,24 @@ class Dropdown extends React.Component {
     this.props.setCollection(item);
   };
 
-  renderItems() {
-    return this.state.items.map((item, key) => {
-      return (
-        <li
-          key={key}
-          onClick={this.selectItem(item)}
-          className="list-item"
-        >
-          {item}
-        </li>
-      );
-    });
-  }
-
   render() {
-    const { header, open } = this.state;
-    const triangleClass = classNames(
-      "triangle",
-      {"triangle-up" :  open,
-      "triangle-down": !open}
-    )
+    const { header, open, items } = this.state;
+    const triangleClass = classNames("triangle", {
+      "triangle-up": open,
+      "triangle-down": !open
+    });
+
     return (
       <div className="dropdown" onClick={this.toggleDropdown}>
         <div className="dd-header">{header}</div>
-        <img
-          src={triangle}
-          className={triangleClass}
-          alt="triangle"
-        />
-        {open && <ul>{this.renderItems()}</ul>}
+        <img src={triangle} className={triangleClass} alt="triangle" />
+        {open && (
+          <ul>
+            {items.map(item => (
+              <DropdownItem item={item} onClick={this.selectItem(item)} />
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
