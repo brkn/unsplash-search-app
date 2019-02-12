@@ -28,7 +28,7 @@ class Header extends Component {
   };
   render() {
     const { headerClassName, setQuery, setCollection, params } = this.props;
-    const headerValue = params.collections ? params.collections : "Collections";
+    const headerValue = params.collections || "Collections";
     return (
       <div className={headerClassName}>
         <div className="Logo-wrapper">

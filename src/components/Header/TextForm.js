@@ -12,7 +12,7 @@ class TextForm extends React.Component {
   };
 
   render() {
-    const value = this.props.query ? this.props.query : "";
+    const value = this.props.query || "";
     return (
       <input
         type="text"
