@@ -10,21 +10,23 @@
   transform: rotate(-180deg);
 }
 .search-button {
-  background: #2a2b8d;
-  border-radius: 25px;
   width: 246px;
   height: 50px;
-  border-width: 0;
+
+  background-color: #2a2b8d;
   color: #ffffff;
+  border-radius: 25px;
+  border-width: 0;
   font-family: Open Sans;
   line-height: normal;
   font-size: 14px;
   letter-spacing: 0.1em;
 }
 .index-header {
+  margin: auto;
+
   background-color: #050417;
   color: #d5d7e5;
-  margin: auto;
   font-size: 14px;
 }
 
@@ -35,6 +37,7 @@
 .index-header .logo-wrapper {
   width: 213px;
   height: 120px;
+  
   margin: auto;
 }
 
@@ -43,8 +46,11 @@
 }
 
 .logo-rectangle {
+  display: flex;
+  
   width: 70px;
   height: 70px;
+  
   background: linear-gradient(
     333.23deg,
     #2a2b8d -16.84%,
@@ -54,45 +60,51 @@
   background-size: cover;
   border-radius: 20px;
   text-align: center;
-  display: flex;
 }
 
 .logo {
   display: block;
-  margin: auto;
+  
   width: 40px;
   height: 40px;
+  
+  margin: auto;
 }
 
 .logo-wrapper > h1 {
+  margin-top: 14px;
+  
   font-family: OpenSans;
   font-size: 36px;
   text-align: center;
   font-weight: normal;
-  margin-top: 14px;
 }
 
 input {
   width: 380px;
   height: 50px;
+  margin-top: 50px;
+  
   border-radius: 4px;
   border-width: 0;
   border-style: unset;
-  margin-top: 50px;
   outline: none;
   font-size: 14px;
   padding-left: 20px;
 }
 
 .content-header input {
-  margin-top: 0;
   float: left;
+  
+  margin-top: 0;
 }
 
 .dropdown {
   width: 400px;
   height: 50px;
+  
   margin: 20px 0;
+  
   background-color: #ffffff;
   border-radius: 4px;
   cursor: pointer;
@@ -103,11 +115,14 @@ input {
 }
 
 li {
+  display: inline-block;
+  
   width: 380px;
   height: 35px;
-  display: inline-block;
+  
   padding-left: 20px;
   padding-top: 15px;  
+  
   color: #050417;
   background-color: #ffffff;
   list-style: none;
@@ -117,6 +132,7 @@ li {
 
 ul {
   position: relative;
+  
   text-align: left;
 }
 
@@ -127,15 +143,19 @@ ul {
 }
 
 .dd-header {
-  margin: 15px 0 15px 20px;
   float: left;
+  
+  margin: 15px 0 15px 20px;
+  
   cursor: default;
 }
 
 .content-header {
   display: block;
+  
   width: 100vw;
   height: 120px; 
+  
   background-color: #050417;
   color: #d5d7e5;
   font-size: 14px;
@@ -143,17 +163,21 @@ ul {
 
 .content-header .user-input {
   display: flex;
+  
   width: 84%;
+  
   margin: 35px 0 30px;
 }
 
 .content-header .search-button {
   float: right;
+  
   margin-left: 52px;
 }
 
 .content-header .logo-wrapper {
   float: left;
+  
   margin: 25px 3.47% 
 }
 
