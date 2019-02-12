@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import uuidv1 from "uuid/v1";
 
 import DropdownItem from "./DropdownItem";
 
@@ -43,7 +44,7 @@ class Dropdown extends React.Component {
         {open && (
           <ul>
             {items.map(item => (
-              <DropdownItem item={item} onClick={this.selectItem(item)} />
+              <DropdownItem key={uuidv1()} item={item} onClick={this.selectItem(item)} />
             ))}
           </ul>
         )}
