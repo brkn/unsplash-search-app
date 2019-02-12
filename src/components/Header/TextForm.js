@@ -3,14 +3,12 @@ import React from "react";
 class TextForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
+    this.state = {};
   }
 
   handleChange = event => {
-    this.setState({ value: event.target.value });
-    this.props.setQuery(event.target.value);
+    const { value } = event.currentTarget;
+    this.props.setQuery(value);
   };
 
   render() {
