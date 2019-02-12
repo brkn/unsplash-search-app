@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 
 import "./App.css";
@@ -58,7 +58,7 @@ class App extends Component {
     const { params, content } = this.state;
     return (
       <Router>
-        <div className="app">
+        <Switch>
           <Route
             exact
             path="/"
@@ -87,7 +87,7 @@ class App extends Component {
               />
             )}
           />
-        </div>
+        </Switch>
       </Router>
     );
   }
