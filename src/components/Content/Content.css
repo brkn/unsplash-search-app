@@ -10,10 +10,6 @@
 .content {
   max-width: 100%;
   min-height: 100vh;
-  
-  background-color: #ffffff;
-}
 
-.grid-cell-image{
-  max-width: 100%;
+  background-color: #ffffff;
 }

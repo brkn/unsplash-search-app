@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 
+import Modal from "./Modal/Modal";
+import Image from "./Image/Image";
+
 import "./Content.css";
 
 class Content extends Component {
@@ -10,6 +13,18 @@ class Content extends Component {
       modalIsOpen: false
     };
   }
+
+  openModal = () => {
+    this.setState({
+      modalIsOpen: true
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  };
 
   resizeItems = () => {
     const grid = document.querySelector(".grid");
@@ -32,60 +47,29 @@ class Content extends Component {
 
   componentDidMount = () => {
     window.addEventListener("resize", this.resizeItems);
-    const elementThatModalAppends = document.querySelector(".content");
-    console.log(elementThatModalAppends);
-    ReactModal.setAppElement(elementThatModalAppends);
+    const elementThatModalAppendsTo = document.querySelector(".content");
+    console.log(elementThatModalAppendsTo);
+    ReactModal.setAppElement(elementThatModalAppendsTo);
   };
 
   componentWillUnmount = () =>
     window.removeEventListener("resize", this.resizeItems);
 
-  renderCells = () => {
-    const { content } = this.props;
-    const { openModal } = this;
-
-    return content.map(item => {
-      return (
-        <div key={item.id} className="grid-cell" onClick={openModal}>
-          <img
-            src={item.urls.small}
-            className="grid-cell-image"
-            alt={item.description}
-            onLoad={this.resizeItems}
-          />
-        </div>
-      );
-    });
-  };
-
-  openModal = () => {
-    this.setState({
-      modalIsOpen: true
-    });
-  };
-
-  closeModal = () => {
-    this.setState({
-      modalIsOpen: false
-    });
-  };
-
   render() {
+    const { content } = this.props;
+    const { openModal, closeModal } = this;
     const { modalIsOpen } = this.state;
-    const { afterOpenModal, closeModal } = this;
+
     return (
       <div className="content grid">
-        <ReactModal
-          /* className="modal" */
-          /* overlayClassName="overlay" */
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          contentLabel="Modal"
-        >
-          <div>"Test"</div>
-        </ReactModal>
-        {this.renderCells()}
+        <Modal closeModal={closeModal} modalIsOpen={modalIsOpen} />
+        {content.map(item => (
+          <Image
+            item={item}
+            resizeItems={this.resizeItems}
+            openModal={openModal}
+          />
+        ))}
       </div>
     );
   }
