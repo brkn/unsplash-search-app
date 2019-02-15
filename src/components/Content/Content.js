@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import Modal from "react-modal";
+import ReactModal from "react-modal";
+
 import "./Content.css";
 
 class Content extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      modalIsOpen: false
+    };
   }
 
   resizeItems = () => {
@@ -26,17 +29,24 @@ class Content extends Component {
       items[i].style.gridRowEnd = "span " + rowSpan;
     }
   };
-  componentDidMount = () => window.addEventListener("resize", this.resizeItems);
+
+  componentDidMount = () => {
+    window.addEventListener("resize", this.resizeItems);
+    const elementThatModalAppends = document.querySelector(".content");
+    console.log(elementThatModalAppends);
+    ReactModal.setAppElement(elementThatModalAppends);
+  };
 
   componentWillUnmount = () =>
     window.removeEventListener("resize", this.resizeItems);
 
   renderCells = () => {
     const { content } = this.props;
+    const { openModal } = this;
 
     return content.map(item => {
       return (
-        <div key={item.id} className="grid-cell">
+        <div key={item.id} className="grid-cell" onClick={openModal}>
           <img
             src={item.urls.small}
             className="grid-cell-image"
@@ -47,8 +57,37 @@ class Content extends Component {
       );
     });
   };
+
+  openModal = () => {
+    this.setState({
+      modalIsOpen: true
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  };
+
   render() {
-    return <div className="content grid">{this.renderCells()}</div>;
+    const { modalIsOpen } = this.state;
+    const { afterOpenModal, closeModal } = this;
+    return (
+      <div className="content grid">
+        <ReactModal
+          /* className="modal" */
+          /* overlayClassName="overlay" */
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          contentLabel="Modal"
+        >
+          <div>"Test"</div>
+        </ReactModal>
+        {this.renderCells()}
+      </div>
+    );
   }
 }
 
