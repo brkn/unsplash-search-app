@@ -15,25 +15,43 @@ class App extends Component {
       params: {},
       content: []
     };
+    let _isMounted = true;
   }
-  searchPhotos = () => {
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  searchPhotos = async () => {
     const { query, collections } = this.state.params;
-    axios
-      .get(BASEURL, {
+    try {
+      const source =axios.CancelToken.source();
+      const response = await axios.get(BASEURL, {
         params: {
           client_id: CLIENT_ID,
           query: query,
           collections: COLLECTION_IDS[collections]
-        }
-      })
-      .then(response => {
+        },
+        cancelToken: source.token
+      });
+      console.log(response);
+      if (!this._isMounted) {
+        source.cancel("Component is not mounted, request canceled; line48");
+      } else {
         this.setState({
           content: response.data.results
         });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      }
+    } catch (thrown) {
+      if (axios.isCancel(thrown)) {
+        console.log("Request canceled", thrown.message);
+      } else {
+        console.log(thrown);
+      }
+    }
   };
 
   setQuery = query => {
