@@ -10,21 +10,20 @@ class Content extends Component {
     super(props);
     this.state = {
       modalIsOpen: false,
-      modalImage: null
+      modalItem: null
     };
   }
 
   openModal = item => event => {
     this.setState({
       modalIsOpen: true,
-      modalImage: item
+      modalItem: item
     });
   };
 
   closeModal = () => {
     this.setState({
-      modalIsOpen: false,
-      modalImage: null
+      modalIsOpen: false
     });
   };
 
@@ -55,7 +54,7 @@ class Content extends Component {
   render() {
     const { content } = this.props;
     const { openModal, closeModal } = this;
-    const { modalIsOpen , modalImage} = this.state;
+    const { modalIsOpen, modalItem } = this.state;
 
     return (
       <div className="content grid">
