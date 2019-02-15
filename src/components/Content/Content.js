@@ -9,19 +9,22 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      modalImage: null
     };
   }
 
-  openModal = () => {
+  openModal = item => event => {
     this.setState({
-      modalIsOpen: true
+      modalIsOpen: true,
+      modalImage: item
     });
   };
 
   closeModal = () => {
     this.setState({
-      modalIsOpen: false
+      modalIsOpen: false,
+      modalImage: null
     });
   };
 
@@ -44,8 +47,7 @@ class Content extends Component {
     }
   };
 
-  componentDidMount = () => 
-    window.addEventListener("resize", this.resizeItems);
+  componentDidMount = () => window.addEventListener("resize", this.resizeItems);
 
   componentWillUnmount = () =>
     window.removeEventListener("resize", this.resizeItems);
@@ -53,16 +55,20 @@ class Content extends Component {
   render() {
     const { content } = this.props;
     const { openModal, closeModal } = this;
-    const { modalIsOpen } = this.state;
+    const { modalIsOpen , modalImage} = this.state;
 
     return (
       <div className="content grid">
-        <Modal closeModal={closeModal} modalIsOpen={modalIsOpen} />
+        <Modal
+          closeModal={closeModal}
+          modalIsOpen={modalIsOpen}
+          modalImage={modalImage}
+        />
         {content.map(item => (
           <Image
             item={item}
             resizeItems={this.resizeItems}
-            openModal={openModal}
+            openModal={openModal(item)}
           />
         ))}
       </div>
