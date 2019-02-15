@@ -23,8 +23,8 @@ export default class Modal extends Component {
 
     return (
       <ReactModal
-        /* className="modal" */
-        /* overlayClassName="overlay" */
+        className="modal"
+        overlayClassName="overlay"
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Modal"

@@ -1,3 +1,7 @@
 .grid-cell-image {
   max-width: 100%;
 }
+
+.modal-image {
+  max-height: 80vh;
+}
