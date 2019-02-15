@@ -15,7 +15,7 @@ class App extends Component {
       params: {},
       content: []
     };
-    let _isMounted = true;
+    this._isMounted = true;
   }
   componentDidMount() {
     this._isMounted = true;
@@ -37,7 +37,6 @@ class App extends Component {
         },
         cancelToken: source.token
       });
-      console.log(response);
       if (!this._isMounted) {
         source.cancel("Component is not mounted, request canceled; line48");
       } else {
