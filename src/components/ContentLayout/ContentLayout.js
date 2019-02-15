@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Content from "./Content";
+import Content from "../Content/Content";
 import Header from "../Header/Header";
 
 import "./ContentLayout.css";
