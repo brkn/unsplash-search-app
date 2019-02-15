@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactModal from "react-modal";
 
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import Image from "../Image/Image";
+
 import "./Modal.css";
 
 export default class Modal extends Component {
@@ -16,6 +19,7 @@ export default class Modal extends Component {
 
   render() {
     const { closeModal, modalIsOpen } = this.props;
+    const item = this.props.modalItem;
 
     return (
       <ReactModal
@@ -25,7 +29,8 @@ export default class Modal extends Component {
         onRequestClose={closeModal}
         contentLabel="Modal"
       >
-        <div>"Test"</div>
+        <Image item={item} className="modal-image" />
+        <ProfileInfo user={item ? item.user : null} />
       </ReactModal>
     );
   }
