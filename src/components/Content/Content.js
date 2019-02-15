@@ -61,15 +61,16 @@ class Content extends Component {
         <Modal
           closeModal={closeModal}
           modalIsOpen={modalIsOpen}
-          modalImage={modalImage}
+          modalItem={modalItem}
         />
         {content.map(item => (
-          <Image
-            item={item}
-            resizeItems={this.resizeItems}
-            openModal={openModal(item)}
-            className="grid-cell-image"
-          />
+          <div key={item.id} className="grid-cell" onClick={openModal(item)}>
+            <Image
+              item={item}
+              resizeItems={this.resizeItems}
+              className="grid-cell-image"
+            />
+          </div>
         ))}
       </div>
     );

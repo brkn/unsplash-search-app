@@ -11,17 +11,15 @@ class Image extends Component {
   }
 
   render() {
-    const { item, resizeItems, openModal, className } = this.props;
+    const { item, resizeItems, className } = this.props;
 
     return (
-      <div key={item.id} className="grid-cell" onClick={openModal}>
-        <img
-          src={item.urls.regular}
-          className={className}
-          alt={item.description}
-          onLoad={className === "grid-cell-image" ? resizeItems : ""}
-        />
-      </div>
+      <img
+        src={item.urls.regular}
+        className={className}
+        alt={item.description}
+        onLoad={className === "grid-cell-image" ? resizeItems : ""}
+      />
     );
   }
 }
