@@ -8,6 +8,11 @@ export default class Modal extends Component {
     super(props);
     this.state = {};
   }
+  componentDidMount = () => {
+    const elementThatModalAppendsTo = document.querySelector(".content");
+    console.log(elementThatModalAppendsTo);
+    ReactModal.setAppElement(elementThatModalAppendsTo);
+  };
 
   render() {
     const { closeModal, modalIsOpen } = this.props;

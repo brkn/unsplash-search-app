@@ -45,12 +45,8 @@ class Content extends Component {
     }
   };
 
-  componentDidMount = () => {
+  componentDidMount = () => 
     window.addEventListener("resize", this.resizeItems);
-    const elementThatModalAppendsTo = document.querySelector(".content");
-    console.log(elementThatModalAppendsTo);
-    ReactModal.setAppElement(elementThatModalAppendsTo);
-  };
 
   componentWillUnmount = () =>
     window.removeEventListener("resize", this.resizeItems);
