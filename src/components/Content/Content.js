@@ -69,6 +69,7 @@ class Content extends Component {
             item={item}
             resizeItems={this.resizeItems}
             openModal={openModal(item)}
+            className="grid-cell-image"
           />
         ))}
       </div>
