@@ -1,0 +1,32 @@
+.profile-wrapper {
+  margin: 0 0 35px 25px;
+}
+
+.profile-image {
+  display: block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+  margin-right: 23px;
+}
+
+.profile-name {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 30px;
+
+  color: #000000;
+}
+
+.profile-username {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 20px;
+
+  color: #2a2b8d;
+}

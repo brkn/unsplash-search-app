@@ -3,5 +3,6 @@
 }
 
 .modal-image {
-  max-height: 80vh;
+  max-height: 75vh;
+  margin: 25px;
 }
