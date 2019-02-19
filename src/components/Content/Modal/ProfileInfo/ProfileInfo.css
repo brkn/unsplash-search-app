@@ -5,10 +5,13 @@
 .profile-image {
   display: block;
   float: left;
+
   width: 60px;
   height: 60px;
-  border-radius: 40px;
+
   margin-right: 23px;
+
+  border-radius: 40px;
 }
 
 .profile-name {
@@ -17,7 +20,6 @@
   font-weight: bold;
   line-height: normal;
   font-size: 30px;
-
   color: #000000;
 }
 
@@ -27,6 +29,5 @@
   font-weight: bold;
   line-height: normal;
   font-size: 20px;
-
   color: #2a2b8d;
 }
