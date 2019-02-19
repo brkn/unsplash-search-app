@@ -4,9 +4,9 @@
 
 .modal-image {
   max-height: 75vh;
-  max-width: 85vw;
+  width: 100%;
 
-  padding: 25px;
+  margin-bottom: 25px;
 }
 
 .no-result-image {
