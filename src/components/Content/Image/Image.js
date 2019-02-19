@@ -18,7 +18,7 @@ class Image extends Component {
         src={item.urls.regular}
         className={className}
         alt={item.description}
-        onLoad={className === "grid-cell-image" ? resizeItems : ""}
+        onLoad={className === "grid-cell-image" ? resizeItems : null}
       />
     );
   }
