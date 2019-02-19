@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Modal from "./Modal/Modal";
 import Image from "./Image/Image";
+import NoResult from "./NoResult/NoResult";
 
 import "./Content.css";
 
@@ -63,15 +64,19 @@ class Content extends Component {
           modalIsOpen={modalIsOpen}
           modalItem={modalItem}
         />
-        {content.map(item => (
-          <div key={item.id} className="grid-cell" onClick={openModal(item)}>
-            <Image
-              item={item}
-              resizeItems={this.resizeItems}
-              className="grid-cell-image"
-            />
-          </div>
-        ))}
+        {content.length ? (
+          content.map(item => (
+            <div key={item.id} className="grid-cell" onClick={openModal(item)}>
+              <Image
+                item={item}
+                resizeItems={this.resizeItems}
+                className="grid-cell-image"
+              />
+            </div>
+          ))
+        ) : (
+          <NoResult />
+        )}
       </div>
     );
   }
