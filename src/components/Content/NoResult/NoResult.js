@@ -22,7 +22,7 @@ export default class NoResult extends Component {
     const { item } = this.state;
     return (
       <React.Fragment>
-        <h2>No result is found, maybe try again? :(</h2>
+        <h2>No result has found, maybe try again? :(</h2>
         <Image className="no-result-image" item={item} />
       </React.Fragment>
     );
