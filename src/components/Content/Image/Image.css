@@ -1,0 +1,16 @@
+.grid-cell-image {
+  max-width: 100%;
+}
+
+.modal-image {
+  max-height: 75vh;
+  width: 100%;
+
+  margin-bottom: 25px;
+}
+
+.no-result-image {
+  width: 100%;
+  
+  margin-top: 13px;
+}
